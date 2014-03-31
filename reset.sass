@@ -27,6 +27,9 @@ a
 p
     margin: 0 .2em .5em .2em
 
+article
+    margin-bottom: 1em
+
 pre
     overflow: scroll
 
@@ -60,3 +63,30 @@ input[type='reset']
 textarea,
 select
     @extend input
+
+table
+    width: 100%
+    padding: 0
+    margin: 0
+    border-spacing: 0
+    border-collapse: collapse
+    th, td
+        padding: .1em
+        text-align: center
+        &:first-child
+            text-align: left
+    thead
+        font-weight: bold
+
+nav
+    > ul > li > *
+        display: block
+        padding: .5em 1em
+    
+    &.horizontal > ul
+        @include clearfix
+        list-style: none
+        > li
+            float: left
+            > *
+                display: block

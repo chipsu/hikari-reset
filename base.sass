@@ -34,4 +34,20 @@ button
     &.no,
     &[type='clear'],
     &[data-action='delete']
-        @include base-button($buttonColor, $inputErrorBackgroundColor) 
+        @include base-button($buttonColor, $inputErrorBackgroundColor)
+
+table
+    color: $tertiaryColor
+    thead
+        background-color: $tertiaryBackgroundColor
+    tbody
+        color: $tertiaryBackgroundColor
+        tr
+            &:nth-child(odd)
+                background-color: rgba($tertiaryBackgroundColor, .1)
+            &:nth-child(even)
+                background-color: rgba($tertiaryBackgroundColor, .2)
+            &:hover
+                cursor: pointer
+                background-color: rgba($tertiaryBackgroundColor, 0)
+
