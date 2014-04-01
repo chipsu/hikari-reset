@@ -4,6 +4,6 @@
         "/awesome/fonts/*.{eot,woff,ttf,svg}"
     ],
     "options": {
-        "name": "font/awesome"
+        "name": "font/fontawesome-webfont"
     }
 }
