@@ -1,0 +1,9 @@
+{
+    "mode": "compile",
+    "source": [
+        "/awesome/fonts/*.{eot,woff,ttf,svg}"
+    ],
+    "options": {
+        "name": "font/awesome"
+    }
+}
