@@ -1,3 +1,5 @@
+@import 'reset_base.sass'
+
 $primaryColor: #000
 $primaryBackgroundColor: #fff
 $secondaryColor: #fff
@@ -13,12 +15,15 @@ $buttonBackgroundColor: $secondaryBackgroundColor
 $inputColor: $primaryColor
 $inputBackgroundColor: $primaryBackgroundColor
 
-*
-    padding: 0
-    margin: 0
+h1, h2, h3
+    font-weight: bold
 
 h1 
     margin: .2em 0 .5em 0
+    font-size: 150%
+
+h3
+    font-size: 120%
 
 a
     color: $linkColor
@@ -32,6 +37,9 @@ article
 
 pre
     overflow: scroll
+
+img
+    max-width: 100%
 
 input
     @include box-sizing(border-box)
