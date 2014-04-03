@@ -90,13 +90,14 @@ table
         font-weight: bold
 
 nav
+    ul
+        list-style: none
     > ul > li > *
         display: block
         padding: .5em 1em
     
     &.horizontal > ul
         @include clearfix
-        list-style: none
         > li
             float: left
             > *
