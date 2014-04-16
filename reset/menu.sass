@@ -2,16 +2,24 @@
 nav
     ul
         list-style: none
-    > ul > li > *
-        display: block
-        padding: .5em 1em
+    > ul li
+        ul
+            display: none
+        > a,
+        > div
+            display: block
+            padding: .5em 1em
     
     &.horizontal > ul
         @include clearfix
         > li
             float: left
-            > *
+        li
+            position: relative
+            &:hover > ul
+                position: absolute
                 display: block
+                width: 100%
 
 nav
     display: none
