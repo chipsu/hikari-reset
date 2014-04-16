@@ -1,0 +1,57 @@
+
+nav
+    ul
+        list-style: none
+    > ul > li > *
+        display: block
+        padding: .5em 1em
+    
+    &.horizontal > ul
+        @include clearfix
+        > li
+            float: left
+            > *
+                display: block
+
+nav
+    display: none
+    &.mobile
+        @include media($tablet)
+            display: block
+            > ul
+                width: 100%
+                display: table
+                > li
+                    float: none
+                    display: table-cell
+                    width: 100%
+                    text-align: center
+                    &:first-child,
+                    &:last-child
+                        width: 0
+                        a
+                            padding: .5em 0
+                            width: 2em
+    &:not(.mobile)
+        display: block
+        > ul > li:last-child
+            float: right
+        @include media($tablet)
+            display: none
+    &.touchmenu
+        display: block
+        padding: .5em 0
+        width: 80%
+        max-width: 300px
+        color: $primaryColor
+        background-color: $secondaryColor
+        a
+            color: $primaryColor
+            padding: .75em .5em
+            &:hover
+                color: $secondaryColor
+                background-color: $secondaryBackgroundColor
+            i
+                margin-right: .3em
+        > ul > li:last-child
+            display: none

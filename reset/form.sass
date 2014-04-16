@@ -1,0 +1,31 @@
+
+input
+    @include box-sizing(border-box)
+    color: $inputColor
+    background-color: $inputBackgroundColor
+    border: 1px solid lighten($inputColor, 50%)
+    border-radius: 3px
+    padding: .3em
+    &:hover,
+    &:focus
+        border-color: lighten($inputColor, 10%)
+        background-color: lighten($inputBackgroundColor, 10%)
+
+button
+    @extend input
+    color: $buttonColor
+    background-color: $buttonBackgroundColor
+    border: none
+    padding: .3em .75em
+    cursor: pointer
+    &:hover
+        background-color: lighten($buttonBackgroundColor, 10%)
+
+input[type='button'],
+input[type='submit'],
+input[type='reset']
+    @extend button
+
+textarea,
+select
+    @extend input

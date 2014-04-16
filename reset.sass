@@ -1,4 +1,4 @@
-@import 'reset_base.sass'
+@import 'reset/base.sass'
 
 $primaryColor: #000
 $primaryBackgroundColor: #fff
@@ -44,61 +44,6 @@ img
 ul
     list-style: square
 
-input
-    @include box-sizing(border-box)
-    color: $inputColor
-    background-color: $inputBackgroundColor
-    border: 1px solid lighten($inputColor, 50%)
-    border-radius: 3px
-    padding: .3em
-    &:hover,
-    &:focus
-        border-color: lighten($inputColor, 10%)
-        background-color: lighten($inputBackgroundColor, 10%)
-
-button
-    @extend input
-    color: $buttonColor
-    background-color: $buttonBackgroundColor
-    border: none
-    padding: .3em .75em
-    cursor: pointer
-    &:hover
-        background-color: lighten($buttonBackgroundColor, 10%)
-
-input[type='button'],
-input[type='submit'],
-input[type='reset']
-    @extend button
-
-textarea,
-select
-    @extend input
-
-table
-    width: 100%
-    padding: 0
-    margin: 0
-    border-spacing: 0
-    border-collapse: collapse
-    th, td
-        padding: .1em
-        text-align: center
-        &:first-child
-            text-align: left
-    thead
-        font-weight: bold
-
-nav
-    ul
-        list-style: none
-    > ul > li > *
-        display: block
-        padding: .5em 1em
-    
-    &.horizontal > ul
-        @include clearfix
-        > li
-            float: left
-            > *
-                display: block
+@import 'reset/form'
+@import 'reset/table'
+@import 'reset/menu'
