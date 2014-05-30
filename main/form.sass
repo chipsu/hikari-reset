@@ -4,14 +4,14 @@ $inputErrorBackgroundColor: #b44
 
 @mixin base-input($color: $inputColor, $backColor: $inputBackgroundColor)
     @include linear-gradient($backColor, darken($backColor, 5%))
-    @include box-shadow(0 0 2px 1px rgba($backColor, 0.65))
+    box-shadow: 0 0 2px 1px rgba($backColor, 0.65)
     &:hover,
     &:focus
         @include linear-gradient($backColor, darken($backColor, 10%))
 
 @mixin base-button($color: $buttonColor, $backColor: $buttonBackgroundColor)
     @include linear-gradient($backColor, darken($backColor, 10%))
-    @include box-shadow(0 0 2px 1px rgba($backColor, 0.65))
+    box-shadow: 0 0 2px 1px rgba($backColor, 0.65)
     &:hover,
     &:focus
         @include linear-gradient(lighten($backColor, 10%), $backColor)
