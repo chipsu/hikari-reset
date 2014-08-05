@@ -1,10 +1,42 @@
 
-// TODO: Variables
 nav
-    &.touchmenu
+    &.hui-touchmenu
+        display: block
+        padding: .5em 0
+        width: 80%
+        max-width: 300px
+        background-color: rgba(0,0,0,.8)
+        a
+            color: #fff
+            padding: .75em .5em
+            &:hover
+                color: $secondaryColor
+                background-color: rgba($secondaryBackgroundColor,.75)
+            i
+                margin-right: .3em
+        > ul > li:last-child
+            display: none
+        // submenu styling, move to lib
+        > ul ul
+            background-color: rgba(0,0,0,.8)
+    @if $moreStyling
         @include linear-gradient(to right, rgba(0,0,0,.5), rgba(0,0,0,.8))
         box-shadow: 0 0 5px rgba(0,0,0,.5)
         a
-            color: #fff
             &:hover
                 @include linear-gradient(to left, rgba($secondaryBackgroundColor,0), rgba($secondaryBackgroundColor,.75))
+        li.hui-has-children
+            position: relative
+            &:after
+                color: #eee
+                position: absolute
+                top: 0
+                right: 0
+                padding: .75em .5em
+                display: block
+                @extend .fa
+                @extend .fa-fw
+                content: "\f054"
+                @include transition(all .25s ease-in-out)
+            &.hui-open:after
+                @include transform(rotate(90deg))
