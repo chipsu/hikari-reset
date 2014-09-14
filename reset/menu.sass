@@ -2,20 +2,33 @@
 nav
     ul
         list-style: none
+
     > ul li
-        ul
-            display: none
         > a,
         > div
             display: block
             padding: .5em 1em
-    
+
+    &.vertical
+        > ul li
+            ul
+                &.collapsed
+                    display: none
+                &.expanded
+                    display: block
+                li
+                    > a,
+                    > div
+                        padding-left: 1.5em
+
     &.horizontal > ul
         @include clearfix
         > li
             float: left
         li
             position: relative
+            ul
+                display: none
             // fixme: why 1px offset?
             &:hover > ul
                 position: absolute
@@ -23,7 +36,7 @@ nav
                 min-width: 100%
                 z-index: 10
 
-nav
+    // From default app sass, needs cleanup
     display: none
     &.mobile
         @include media($tablet)
@@ -44,8 +57,6 @@ nav
                             width: 2em
     &:not(.mobile)
         display: block
-        > ul > li:last-child
-            float: right
         @include media($tablet)
             display: none
     &.touchmenu
