@@ -4,24 +4,30 @@ $inputErrorBackgroundColor: #b44
 
 @mixin base-input($color: $inputColor, $backColor: $inputBackgroundColor)
     @include linear-gradient($backColor, darken($backColor, 5%))
-    box-shadow: 0 0 2px 1px rgba($backColor, 0.65)
     &:hover,
     &:focus
         @include linear-gradient($backColor, darken($backColor, 10%))
 
 @mixin base-button($color: $buttonColor, $backColor: $buttonBackgroundColor)
     @include linear-gradient($backColor, darken($backColor, 10%))
-    box-shadow: 0 0 2px 1px rgba($backColor, 0.65)
     &:hover,
     &:focus
         @include linear-gradient(lighten($backColor, 10%), $backColor)
+    &.left,
+    &.middle
+        border-top-right-radius: 0
+        border-bottom-right-radius: 0
+    &.right,
+    &.middle
+        border-top-left-radius: 0
+        border-bottom-left-radius: 0
 
 input
     @include base-input()
     &.success
-        @include base-button($buttonColor, $inputSuccessBackgroundColor)
+        @include base-input($buttonColor, $inputSuccessBackgroundColor)
     &.error
-        @include base-button($buttonColor, $inputErrorBackgroundColor) 
+        @include base-input($buttonColor, $inputErrorBackgroundColor)
 
 button
     @include base-button()
@@ -35,4 +41,9 @@ button
     &[type='clear'],
     &[data-action='delete']
         @include base-button($buttonColor, $inputErrorBackgroundColor)
+    &.secondary
+        @include base-button($buttonColor, darken($buttonBackgroundColor, 5%))
 
+.button
+    @extend button
+    display: inline-block

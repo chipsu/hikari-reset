@@ -76,3 +76,27 @@ nav
                 margin-right: .3em
         > ul > li:last-child
             display: none
+
+.dropdown
+    position: relative
+    display: inline-block
+    list-style: none
+    .dropdown-menu
+        display: none
+        list-style: none
+        position: absolute
+        z-index: 10
+        background-color: #000
+        li
+            display: block
+            > a,
+            > div
+                color: #fff
+                display: block
+                padding: .5em .75em
+                white-space: nowrap
+                > i
+                    margin-right: .25em
+
+    &:hover .dropdown-menu
+        display: block

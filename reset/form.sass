@@ -1,5 +1,6 @@
 
-input
+
+@mixin reset-input()
     @include box-sizing(border-box)
     color: $inputColor
     background-color: $inputBackgroundColor
@@ -11,8 +12,11 @@ input
         border-color: lighten($inputColor, 10%)
         background-color: lighten($inputBackgroundColor, 10%)
 
+input
+    @include reset-input()
+
 button
-    @extend input
+    @include reset-input()
     color: $buttonColor
     background-color: $buttonBackgroundColor
     border: none
